@@ -1,0 +1,248 @@
+@font-face {
+    font-family: myFont;
+    src: url(DESIB___.TTF);
+}
+
+body {
+    background-image: url(../img/background-Black.jpg);
+    background-size: cover;
+    background-color: grey;
+    width: 100%;
+}
+
+.androidicon01, .androidmusic, .effectocolmena, .androidlogo, .androidlateral
+{ display: inline-block; background: url('../img/sprite.png') no-repeat; overflow: hidden; text-indent: -9999px; text-align: left; }
+ 
+.androidicon01 { background-position: -0px -0px; width: 1024px; height: 1024px; }
+.androidmusic { background-position: 10px -779px; width: 402px; height: 182px; background-size: 51em; }
+.effectocolmena { background-position: -186px -474px; width: 320px; height: 264px; background-size: 30rem;}
+.androidlogo { background-position: -242px -332px; width: 300px; height: 300px; background-size: 21rem }
+.androidlateral { background-position: 28px -608px; width: 200px; height: 400px;background-size: 400%; }
+
+
+div.androidlateral {
+    width: 10%;
+    position: absolute;
+    height: 48%;
+    top: 4rem;
+}
+
+.androidmusic {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 26%;
+}
+
+div.effectocolmena {
+    position: absolute;
+    top: -3rem;
+    left: 17%;
+    width: 11%;
+    z-index: 1;
+}
+
+div.androidlogo {
+    position: absolute;
+    top: -1rem;
+    left: 23%;
+    width: 8%;
+    z-index: 1;
+}
+
+div.tituloPagina {
+    position: absolute;
+    top: -0.3rem;
+    left: 1rem;
+    z-index: 5;
+    font-family: myFont;
+    color: white;
+    font-size: 2.5rem;
+
+    /*EFECTO 3D*/
+    text-shadow: 1px 1px 0px rgb(230,230,230), 
+			2px 2px 0px rgb(200,200,200), 
+			3px 3px 0px rgb(180,180,180), 
+			4px 4px 0px rgb(160,160,160), 
+			5px 5px 0px rgb(140,140,140),
+			6px 6px 0px rgb(0,0,0), 
+			9px 9px 20px rgb(0,0,0);
+}
+
+nav.botonera {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    background-color: #222028;
+    width: 90%;
+    border-radius: 0;  
+    margin: 3rem 0 0 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.8rem;
+    height: 3rem;
+    z-index: 5;
+}
+
+nav.botonera ul {
+    display: inline-flex;
+    height: 100%;
+    background-color: #2c3544;
+}
+
+nav.botonera ul li {
+    align-self: stretch;
+    width: 10rem;
+    height: 100%;
+}
+
+nav.botonera ul li a {
+    font-family: myFont;
+    text-align: center;
+    color: white;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 1.2rem 0;
+    width: 100%;
+    height: 100%;
+}
+
+nav.fixbotonera {
+    position: fixed;
+    margin: 0;
+}
+
+nav.botonera li:hover {
+    background-color: #474356;
+}
+
+section {
+    background-image: url(../img/background-Black3.jpg);
+    background-size: cover;
+    background-color: grey;
+    position: relative;
+    min-height: 30rem;
+    display: inline-flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 10%;
+    background-color: white;
+    border-style:solid;
+    border-color: black;
+    z-index: 0;
+    
+}
+
+footer {
+    font-family: myFont;
+    width: 80%;
+    margin: 0 10%;
+    background-color: #222028;
+    border-style:solid;
+    border-width: 0 2px 1px 2px;
+    border-color: #222028;
+    padding: 1.5rem 0;
+    color: white;
+    text-align: center;
+}
+
+.login {
+    font-family: myFont;
+    background-color: lightgrey;
+    margin: 10rem auto;
+    width: 40%;
+    border: 2px solid #222028;
+    box-shadow: 15px 15px 5px #2c3544;
+    text-align: center;
+    z-index: 2;
+    
+}
+
+.login .titulo {
+    background-color: #222028;
+    padding: 1.5rem;
+    color: white;
+}
+
+.login form {
+    width: 80%;
+    margin: 2rem auto;
+}
+
+.login img {
+    width: 80%;
+}
+
+.login input, div.condicionesLegales {
+    width: 80%;
+    margin: auto;
+}
+
+.login input[type="checkbox"] {
+    width: 0;
+}
+
+.login p {
+    margin: 1rem;
+}
+
+.login input[type="submit"], a.registrarse {
+    font-family: myFont;    
+    background-color: #222028; 
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    
+}
+
+div#carrusel div {
+    position: relative; 
+    width: 600%;
+    margin: auto; 
+    padding: 0; 
+    font-size: 0; 
+
+    -webkit-animation: 15s movimiento infinite; 
+    animation: 15s movimiento infinite; 
+}
+ 
+div#carrusel div img { 
+    width: 50rem; 
+    height: 25rem;
+}
+ 
+div#carrusel { 
+    margin: 15rem auto;
+    width: 50rem; 
+    max-width: 1000px; 
+    overflow: hidden 
+}
+
+ 
+@-webkit-keyframes movimiento {
+    0% { left: 0%; }
+    20% { left: 0%; }
+    25% { left: -100%; }
+    45% { left: -100%; }
+    50% { left: -200%; }
+    70% { left: -200%; }
+    75% { left: -300%; }
+    95% { left: -300%; }
+    100% { left: -400%; }
+}
+ 
+@keyframes movimiento {
+    0% { left: 0%; }
+    20% { left: 0%; }
+    25% { left: -100%; }
+    45% { left: -100%; }
+    50% { left: -200%; }
+    70% { left: -200%; }
+    75% { left: -300%; }
+    95% { left: -300%; }
+    100% { left: -400%; }
+}
+           

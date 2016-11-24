@@ -1,0 +1,17 @@
+{% extends 'cuadroLogReg.html.twig' %}
+    {% block registro %}
+
+    <form action="login.php">
+        <input type="text" name="nombre" placeholder="Nombre..." autofocus="autofocus" required="required"/>
+        <input type="text" name="apellidos" placeholder="Apellidos..." required="required"/>
+        <input type="email" name="usuario" placeholder="E-Mail de Acceso..." required="required"/>
+        <input type="password" name="contrasenia" placeholder="Contraseña..." required="required"/>
+        <input type="password" name="contrasenia" placeholder="Repetir Contraseña..." required="required"/>
+        <input type="number" name="codigoPostal" min="10000" max="99999" placeholder="Código Postal..." required="required"/>
+        <input type="date" name="fechaNacimiento" placeholder="Fecha de Nacimiento..." required="required"/><br/>
+        <div class="condicionesLegales">
+        <input type="checkbox" name="condiciones" value="true">Acepto los términos y condiciones legales.
+        </div>
+        <input type="submit" value="Registrarse"/><br/>
+    </form>
+{% endblock %}

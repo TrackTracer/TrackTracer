@@ -1,0 +1,15 @@
+{% extends 'cuadroLogReg.html.twig' %}
+    {% block login %}
+    
+    
+    <form action="login.php">
+        <img src="../View/img/androidIcon01.png"/>
+        {% if error == 400 %}<h3 style="color: red;">Usuario o contraseña incorrectos. Inténtelo de nuevo.</h3>{% endif %}
+        {% if error == 101 %}<h3 style="color: red;">Acceso No Autorizado. Contacte con un Administrador.</h3>{% endif %}
+        <input type="text" name="usuario" placeholder="Nombre de usuario..." autofocus="autofocus" required="required"/>
+        <input type="password" name="contrasenia" placeholder="Contraseña..." required="required"/>
+        <input type="submit" value="Entrar"/><br/>
+        <p>¿Aun no te has registrado? Hazlo ahora mismo, es muy fácil:</p>
+        <a class="registrarse" href="../Controller/index.php?accion=registrarse">Registrate ahora</a>
+    </form>
+{% endblock %}

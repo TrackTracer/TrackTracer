@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title></title>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <meta charset="UTF-8">
+        <!--MOBILE FIRST-->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link href="../View/css/reset.css" rel="stylesheet">
+        <link href="../View/css/normalize.css" rel="stylesheet">
+
+        <link href="../View/css/style.css" rel="stylesheet">
+        <script src="../View/js/scripts.js"></script>
+
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+    </head>
+    <body>
+    <div class="contenedor">
+      <div class="androidlateral"></div>
+        <header>
+            <nav class="botonera">
+                <div class="tituloPagina">DAW - Seeker</div>
+            <div>
+                <div class="effectocolmena"></div>
+                <div class="androidlogo"></div>
+            </div>
+                <ul>
+                    <li><a href="../Controller/index.php?accion=encontrar">Dónde encontrarnos</a></li>
+                    <li><a href="../Controller/index.php?accion=conocer">Acerca de nosotros</a></li>
+                    <li><a href="../Controller/index.php?accion=especificar">Especificaciones</a></li>
+                    <li><a href="../Controller/index.php?accion=logear">Iniciar sesión</a></li>
+                    <li><a href="../Controller/index.php?accion=registrarse">Registrate</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+{% block loginregistro %}
+        <div id="carrusel">
+			<div>
+				<img src="../View/img/paisaje01.jpg">
+                <img src="../View/img/paisaje02.jpg">
+                <img src="../View/img/paisaje03.jpg">
+                <img src="../View/img/paisaje04.jpg">
+                <img src="../View/img/paisaje05.jpg">
+                <img src="../View/img/paisaje06.jpg">
+			</div>
+		</div>
+{% endblock %} {#Bloque de Login.#}        
+        </section>
+        <footer>
+            <div class="androidmusic"></div>
+            enlaces footer y derechos reservados
+        </footer>
+    </div>
+    </body>
+</html>

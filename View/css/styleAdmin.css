@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: dodgerblue;
+}
+
+#cabecera {
+    width: 100%;
+    padding: 2rem;
+    background-color: lightgrey;
+}
+
+.breadcrumb {
+    display: inline-block;
+    width: 100%;
+    height: 5rem;
+}
+
+a.cerrar {
+    display: inline-block;
+    padding: 0.5rem;
+    margin: 0.7rem;
+    width: 15rem;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+table.table {
+    margin-top: 0rem;
+}
+
+tr, td, th {
+    width: 1rem;
+    text-align: center;
+    vertical-align: middle;
+}
+
+a, button {
+    width: 45%;
+}
+
+button#nuevoCliente {
+    width: 100%;
+}
+
+input {
+    width: 100%;
+}

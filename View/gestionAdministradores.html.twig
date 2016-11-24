@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="UTF-8">
+    <title>CRUD de clientes del BANCO</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    
+    <!--Enlaces CMD Boostrap-->
+    <link rel="stylesheet" href="../View/css/font-awesome-4.7.0/css/font-awesome.min.css">
+    
+    <!--Enlaces CMD Boostrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link type="text/css" rel="stylesheet" href="../View/css/styleAdmin.css">
+
+  </head>
+  <body>
+      <div class="container">
+        <div class="row">
+          <header id="cabecera" class="col-xs-12 col-sm-12 col-md-12"><h2 >Gestion de Usuarios</h2></header>
+        </div> 
+        <div class="row">     
+            <form class="navbar-form navbar-right col-xs-12 col-sm-6 col-md-7" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <a role="button" href="index.php?accion=cerrarSesion" class="col-xs-4 col-sm-6 col-md-5 cerrar btn btn-primary">
+                     <span class="glyphicon glyphicon-log-out"></span>  Cerrar Sesión  </a>
+        </div>
+      <div class="table-reponsive">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>Codigo</th>
+              <th>Nombre</th>
+              <th>Apellidos</th>
+              <th>CP</th>
+              <th>Usuario</th>
+              <th>Contraseña</th>
+              <th>Fecha Nac.</th>
+              <th>Fecha Alta</th>
+              <th>Tipo</th>
+              <th style="colspan: 2">Acceso</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <form action="gestionAdministradores.php?modificar=modifica" method="post">
+                <td>
+                  <input type="text" name="codigo">
+                </td>
+                <td>
+                  <input type="text" name="nombre">
+                </td>
+                <td>
+                  <input type="text" name="apellidos">
+                </td>
+                <td>
+                  <input type="text" name="codigoPostal">
+                </td>
+                <td>
+                  <input type="text" name="usuario">
+                </td>
+                <td>
+                  <input type="text" name="contrasenia">
+                </td>   
+                <td>
+                  <input type="text" name="fechaNacimiento">
+                </td> 
+                <td>
+                  <input type="text" name="fechaAlta">
+                </td>
+                <td>
+                  <input type="text" name="tipoUsuario">
+                </td>
+                <td>
+                  <input type="text" name="acceso">
+                  <input type="hidden" name="confirmarInsercion" value="true">
+                </td>                                                        
+                <td style="colspan: 2">
+                  <button type="submit" id="nuevoCliente" class="btn btn-success">
+                    <span class="glyphicon glyphicon-plus"></span> Nuevo cliente
+                  </button>
+                </td>
+              </form>
+            </tr>
+          </tfoot>
+          <tbody>
+        
+              {% for usuario in usuarios %}
+                {# Situacion de modificacion de la fila #}
+                {% if usuario.codigo == usuarioModificado.codigo %} 
+                       <tr>
+                <form action="gestionAdministradores.php" method="post">
+           
+                    <td>{{usuario.codigo}}</td>
+                    <td><input type="text" name="nombre" placeholder="{{usuarioModificado.nombre}}"></td>
+                    <td><input type="text" name="apellidos" placeholder="{{usuarioModificado.apellidos}}"></td>
+                    <td><input type="number" name="codigoPostal" min="10000" max="99999" placeholder="{{usuarioModificado.codigoPostal}}"></td>
+                    <td><input type="text" name="usuario" placeholder="{{usuarioModificado.usuario}}"></td>
+                    <td><input type="text" name="contrasenia" placeholder="{{usuarioModificado.contrasenia}}"></td>
+                    <td><input type="date" name="fechaNacimiento" placeholder="{{usuarioModificado.fechaNacimiento}}"></td>
+                    <td><input type="date" name="fechaAlta" placeholder="{{usuarioModificado.fechaAlta}}"></td>
+                    <td><input type="text" name="tipoUsuario" placeholder="{{usuarioModificado.tipoUsuario}}"></td>
+                    <td><input type="text" name="acceso" min="0" max="1" placeholder="{{usuarioModificado.acceso}}">
+                        <input type="hidden" name="confirmarModificacion" value="{{usuarioModificado.codigo}}"></td>
+                    <td>
+                      <a role="button" href="gestionAdministradores.php" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                      <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-check"></span></button>
+                  </td>
+                  </form> 
+                  </tr>
+                {% else %}
+                  <tr>
+                    <td>{{usuario.codigo}}</td>
+                    <td>{{usuario.nombre}}</td>
+                    <td>{{usuario.apellidos}}</td>
+                    <td>{{usuario.codigoPostal}}</td>
+                    <td>{{usuario.usuario}}</td>
+                    <td>{{usuario.contrasenia}}</td>
+                    <td>{{usuario.fechaNacimiento}}</td>
+                    <td>{{usuario.fechaAlta}}</td>
+                    <td>{{usuario.tipoUsuario}}</td>
+                    <td>{{usuario.acceso}}</td>
+                {% endif %}
+                {% if usuario.codigo == baja %}  # Situacion de baja de la fila #
+                  <td>
+                    <a role="button" href="gestionAdministradores.php" class="btn btn-danger">
+                      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                    <a role="button" href="gestionAdministradores.php?bajaConfirmada={{usuario.codigo}}" class="btn btn-success">
+                      <span class="glyphicon glyphicon-trash"></span></a>
+                  </td>   
+                <tr>
+                {% elseif usuario.codigo != usuarioModificado.codigo  %}
+                  <td>
+                  <a role="button" href="gestionAdministradores.php?modificacion={{usuario.codigo}}" class="btn btn-warning">
+                    <span class="glyphicon glyphicon-pencil"></span></a>
+                  <a role="button" href="gestionAdministradores.php?baja={{usuario.codigo}}" class="btn btn-danger">
+                    <span class="glyphicon glyphicon-trash"></span></a>
+                  </td>   
+              <tr>
+                {% endif %}
+              {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
+
