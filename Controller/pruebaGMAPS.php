@@ -71,7 +71,7 @@ function myMap() {
 }
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBj8-R7qXsgWxKwnNaS2k1oHnC0tVxWA0Y&callback=myMap"></script>
+<script src=""></script>
 
 </body>
 </html>
